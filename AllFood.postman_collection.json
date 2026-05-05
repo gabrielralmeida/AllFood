@@ -1,0 +1,180 @@
+{
+  "info": {
+    "_postman_id": "839c8b01-1088-479a-8928-2a60015f02f9",
+    "name": "AllFood",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2950721"
+  },
+  "item": [
+    {
+      "name": "Cadastrar Usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nome\": \"Juliana Cardoso\",\r\n    \"userlogin\":\"jcardoso1234\",\r\n    \"email\":\"jcardoso1234@gmail.com\",\r\n    \"senha\": \"qaws1234\",\r\n    \"tipousuario\":\"C\",\r\n    \"endereco\": {\r\n        \"cep\": \"02205001\",\r\n        \"logradouro\": \"avenida boschetti\",\r\n        \"numero\": 100,\r\n        \"cidade\": \"São Paulo\",\r\n        \"estado\": \"São Paulo\",\r\n        \"uf\": \"SP\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/usuario",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuario"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"jcardoso1234@gmail.com\",\r\n    \"senha\":\"qaws1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Alterar Senha",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"jcardoso1234@gmail.com\",\r\n    \"userlogin\": \"jcardoso1234\",\r\n    \"senha\": \"qaws12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/login/alterar-senha",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "login",
+            "alterar-senha"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Alterar Dados do Usuario",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQUxMRk9PRCIsInN1YiI6ImpjYXJkb3NvMTIzNEBnbWFpbC5jb20iLCJub21lIjoiSnVsaWFuYSBDYXJkb3NvIn0.448v_6rUXpewlbRv9BO6-R-HxTjWnnC6Sipng4KzgzQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"jcardoso1234@gmail.com\",\r\n    \"nome\": \"Juliana Cardoso alterada\",\r\n    \"tipoUsuario\": \"C\",\r\n    \"endereco\": {\r\n        \"cep\": \"02205001\",\r\n        \"logradouro\": \"rua boschetti\",\r\n        \"numero\": 100,\r\n        \"cidade\": \"São Paulo\",\r\n        \"estado\": \"São Paulo\",\r\n        \"uf\": \"SP\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/alterar-dados-usuario",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "alterar-dados-usuario"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta usuario por nome",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgQUxMRk9PRCIsInN1YiI6ImdhYnJpZWxyYWxtZWlkYUBnbWFpbC5jb20iLCJub21lIjoiR2FicmllbCBBbHRlcmFkbyAxIn0.rMIx2rZc020RHOo3UZ04hvknp3dslcsHOai_1Xx-LAw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "page",
+              "value": "0",
+              "type": "text",
+              "uuid": "12f83ffa-e2e1-4234-bdbd-2d4558725a68"
+            },
+            {
+              "key": "nome",
+              "value": "Gabriel",
+              "type": "text",
+              "uuid": "b1fa2d44-a4de-40b0-82c2-89b93e753c88"
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:8080/usuario",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "usuario"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
