@@ -45,6 +45,7 @@ public class EnderecoController {
 	@Operation(summary = "Atualizar endereço")
 	public ResponseEntity<EnderecoDto> atualizar(@PathVariable Long id, @Valid @RequestBody EnderecoCadastroDTO req) {
 		return ResponseEntity.ok(enderecoService.atualizar(id, req));
+		
 	}
 
 }
